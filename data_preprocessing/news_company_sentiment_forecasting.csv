@@ -1,0 +1,9 @@
+extracted_companies,negative,neutral,positive
+"['Aerolineas Argentinas', 'Boeing', 'REUTERS']",0,1,0
+"['Amazon', 'EU']",0,0,1
+['Brookfield Renewable'],0,1,0
+['Pepsico'],0,1,0
+['SDI AOP'],0,0,1
+['Shell'],0,0,1
+['Verra'],0,0,1
+[],8,24,14

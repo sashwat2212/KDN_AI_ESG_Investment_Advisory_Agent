@@ -1,0 +1,21 @@
+extracted_companies,negative,neutral,positive
+"['AISP', 'EOSH UK', 'ISO']",0,0,1
+['AbbottEnergy'],0,1,1
+['Asean Business Advisory Council'],0,0,1
+['Carbon-Limits Nigeria'],0,0,1
+['Eco-Wealth'],0,0,1
+"['GainsAssociates', 'functionland']",0,0,1
+['KDS'],0,0,1
+"['Lowfields Farm', 'Arla']",0,2,0
+['One Earth CUBE'],0,0,1
+['PBX'],0,0,1
+['Porsche'],0,1,0
+"['SavingDAO', 'FMCPay']",0,1,0
+['ScottishPower'],0,1,0
+['Solana'],0,0,1
+['TERI'],0,0,1
+['Tata Motors'],0,0,1
+['Vantara'],0,0,1
+"['Wessex Water', 'YTL Construction']",0,0,1
+"['astroscale_HQ', 'MSUAorg', 'astroscale_JP']",0,0,1
+[],6,12,61
