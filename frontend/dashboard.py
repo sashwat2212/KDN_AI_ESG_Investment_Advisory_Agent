@@ -1,12 +1,35 @@
 import streamlit as st
 import requests
 import numpy as np
-
+from PIL import Image
+import base64
 
 API_URL = "http://127.0.0.1:8000"
 
 
 st.set_page_config(page_title="ESG Investment Dashboard", layout="wide")
+
+
+
+# def get_base64_image(image_path):
+#     with open(image_path, "rb") as img_file:
+#         return base64.b64encode(img_file.read()).decode()
+
+# logo_base64 = get_base64_image("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /logo.png")
+
+# st.markdown(
+#     f"""
+#     <div style="text-align: left;">
+#         <img src="data:image/png;base64,{logo_base64}" style="width: 200px;">
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+
+
+#st.sidebar.image("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /logo.png", use_container_width=True)  
+
 
 st.markdown(
     """
@@ -58,6 +81,38 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+logo_base64 = get_base64_image("logo.png")
+
+st.markdown(
+    f"""
+    <style>
+        .logo-container {{
+            
+            top: 1;
+            left: 1;
+            z-index: 9999;
+            padding: 0;
+            margin: 0;
+        }}
+        .logo-container img {{
+            width: 70px;  /* Adjust the size as needed */
+            padding: 0;
+            margin: 0;
+        }}
+    </style>
+    <div class="logo-container">
+        <img src="data:image/png;base64,{logo_base64}">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 st.sidebar.title("🌍 ESG Navigation")
 st.sidebar.page_link("dashboard.py", label="📢 ESG Predictions & Portfolio")
@@ -164,6 +219,10 @@ investment_amount = st.number_input("💵 Enter Investment Amount ($):", min_val
 if q_values and isinstance(q_values, list) and all(isinstance(q, (int, float, str)) for q in q_values):
     try:
         q_buy, q_hold, q_sell = map(float, q_values)
+
+        if q_buy == max(q_buy, q_hold, q_sell):
+            q_buy = -1 * q_buy
+            projected_growth = investment_amount * ((q_buy-1)/10)
         projected_growth = investment_amount * (1 + max(q_buy, q_hold, q_sell) / 10)
         
         st.markdown(f'<div class="portfolio-card">📈 Projected Portfolio Value (1 Year): ${round(projected_growth, 2)}</div>', unsafe_allow_html=True)

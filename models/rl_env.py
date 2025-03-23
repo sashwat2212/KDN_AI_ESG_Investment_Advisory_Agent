@@ -15,7 +15,11 @@ def load_and_preprocess_data(data_path):
     env_cols = ["avg_air_pollution", "avg_deforestation", "Weighted_ESG_Score"]
     df[env_cols] = df[env_cols].fillna(df[env_cols].median())  #median
     
-    df["Gov_Grade"] = df["Gov_Grade"].fillna(0)  #fill with 0
+    df["Gov_Score"] = df["Gov_Score"].fillna(0)  #fill with 0
+
+    scaler = MinMaxScaler()
+    df[["Weighted_ESG_Score", "avg_air_pollution", "avg_deforestation", "Gov_Score"]] = \
+        scaler.fit_transform(df[["Weighted_ESG_Score", "avg_air_pollution", "avg_deforestation", "Gov_Score"]])
     
     return df
 
@@ -38,7 +42,7 @@ class ESGTradingEnv(gym.Env):
         esg_score = self.data.loc[self.current_step, "Weighted_ESG_Score"]
         pollution = self.data.loc[self.current_step, "avg_air_pollution"]
         deforestation = self.data.loc[self.current_step, "avg_deforestation"]
-        governance = self.data.loc[self.current_step, "Gov_Grade"]
+        governance = self.data.loc[self.current_step, "Gov_Score"]
 
         
         reward = self.compute_reward(esg_score, pollution, deforestation, governance, action)
@@ -81,5 +85,5 @@ class ESGTradingEnv(gym.Env):
             self.data.loc[self.current_step, "Weighted_ESG_Score"],
             self.data.loc[self.current_step, "avg_air_pollution"],
             self.data.loc[self.current_step, "avg_deforestation"],
-            self.data.loc[self.current_step, "Gov_Grade"]
+            self.data.loc[self.current_step, "Gov_Score"]
         ], dtype=np.float32)

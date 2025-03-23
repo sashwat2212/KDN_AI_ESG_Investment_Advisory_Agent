@@ -2,9 +2,13 @@ import openai
 import pandas as pd
 import time
 import json
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = openai_api_key
 
-openai.api_key = "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"  
 
 
 def gpt_extract_companies(text):

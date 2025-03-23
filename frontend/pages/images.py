@@ -2,6 +2,8 @@ import streamlit as st
 import os
 from pathlib import Path
 import random
+import base64
+from PIL import Image
 
 #page title and layout
 st.set_page_config(page_title="🌿 ESG Image Gallery", page_icon="🖼️", layout="wide")
@@ -88,6 +90,37 @@ def apply_custom_styles():
         unsafe_allow_html=True
     )
 
+
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+logo_base64 = get_base64_image("logo.png")
+
+st.markdown(
+    f"""
+    <style>
+        .logo-container {{
+            
+            top: 1;
+            left: 1;
+            z-index: 9999;
+            padding: 0;
+            margin: 0;
+        }}
+        .logo-container img {{
+            width: 70px;  /* Adjust the size as needed */
+            padding: 0;
+            margin: 0;
+        }}
+    </style>
+    <div class="logo-container">
+        <img src="data:image/png;base64,{logo_base64}">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 apply_custom_styles()
 
