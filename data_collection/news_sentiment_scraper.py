@@ -30,10 +30,10 @@ options.add_argument(f"user-agent={user_agent}")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 def analyze_sentiment(text):
-    
     sentiment_score = sia.polarity_scores(text)["compound"]
     sentiment_label = "Positive" if sentiment_score > 0.05 else "Negative" if sentiment_score < -0.05 else "Neutral"
     return sentiment_score, sentiment_label
+
 
 def scrape_google_finance(query):
     print("Scraping Google Finance...")

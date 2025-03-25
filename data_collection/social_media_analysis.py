@@ -21,7 +21,7 @@ df = fetch_tweets("sustainability")
 print(df.head())
 df.to_csv("twitter_esg_data.csv", index=False)
 
-
+# --------------------------------------------------------------------------------------
 
 import pandas as pd
 import nltk

@@ -9,33 +9,117 @@ import base64
 from PIL import Image
 
 
+st.markdown(
+        """
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(to right, #002E6D, #0057B8);
+                color: white;
+            }
+            [data-testid="stSidebar"] {
+                background: #aceaff;
+                padding: 25px;
+                border-right: 4px solid rgb(0, 192, 174);
+                color: #FFFFFF !important;
+            }
+            [data-testid="stSidebarContent"] {
+                background: #aceaff;
+                color: #FFFFFF !important;
+                font-size: 16px;
+            }
+            .stApp {
+                background: white;
+            }
+            .image-container:hover {
+                transform: scale(1.08);
+                transition: all 0.3s ease-in-out;
+                filter: brightness(1.2);
+            }
+            .header-text {
+                font-size: 40px;
+                font-weight: bold;
+                color: black;
+                text-align: center;
+                text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            }
+            .subheader-text {
+                font-size: 26px;
+                font-weight: bold;
+                color: black;
+                margin-top: 20px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            .info-text {
+                font-size: 20px;
+                color: white;
+                text-align: center;
+            }
+            .category-header {
+                font-size: 24px;
+                font-weight: bold;
+                color: #E6E6E6;
+                margin-top: 30px;
+            }
+            .separator {
+                border-top: 2px solid rgba(255, 255, 255, 0.5);
+                margin: 20px 0;
+            }
+            .stButton > button {
+                border-radius: 10px;
+                background: linear-gradient(135deg, #0057B8, #002E6D);
+                color: white;
+                font-weight: bold;
+                padding: 10px 20px;
+                transition: 0.3s;
+                border: none;
+            }
+            .stButton > button:hover {
+                background: linear-gradient(135deg, #002E6D, #0057B8);
+                transform: scale(1.05);
+            }
+            .metric-card {
+                background: linear-gradient(135deg, #0057B8 30%, #002E6D 100%);
+                padding: 20px;
+                border-radius: 12px;
+                color: white;
+                text-align: center;
+                font-size: 22px;
+                font-weight: bold;
+                margin: 10px 0;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.set_page_config(page_title="ESG Statistics", page_icon="📊", layout="wide")
+
+
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-logo_base64 = get_base64_image("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /frontend/logo.png")
+# Encode the logo
+logo_base64 = get_base64_image("logo.png")
 
-
-st.markdown(
+# Insert logo at the top of the sidebar
+st.sidebar.markdown(
     f"""
     <style>
-        .logo-container {{
-            
-            top: 1;
-            left: 1;
-            z-index: 9999;
-            padding: 0;
-            margin: 0;
+        .sidebar-logo {{
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-top: -350px;  /* Move logo up */
+            margin-bottom: 20px; /* Add some space below */
         }}
-        .logo-container img {{
-            width: 70px;  /* Adjust the size as needed */
-            padding: 0;
-            margin: 0;
+        .sidebar-logo img {{
+            width: 120px;  /* Adjust logo size */
         }}
     </style>
-    <div class="logo-container">
+    <div class="sidebar-logo">
         <img src="data:image/png;base64,{logo_base64}">
     </div>
     """,
@@ -327,4 +411,3 @@ else:
 
 
 st.markdown("---")  
-

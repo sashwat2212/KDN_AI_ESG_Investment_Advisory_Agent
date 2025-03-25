@@ -68,7 +68,7 @@ print("esg_news_with_companies.csv")
 print("twitter_esg_with_companies.csv")
 
 
-
+# --------------------------------------------------------------------------------------
 
 
 import pandas as pd
@@ -112,7 +112,7 @@ df_twitter_industry.to_csv("industry_twitter_esg.csv", index=False)
 df_news_industry.to_csv("industry_news_esg.csv", index=False)
 
 
-
+# --------------------------------------------------------------------------------------
 
 
 from sklearn.decomposition import LatentDirichletAllocation
@@ -137,6 +137,7 @@ df_topic_scores.rename(columns={"lda_score": "topic_esg_impact"}, inplace=True)
 df_topic_scores.to_csv("topic_esg_impact.csv", index=False)
 
 
+# --------------------------------------------------------------------------------------
 
 
 from geopy.geocoders import Nominatim
@@ -163,6 +164,9 @@ df_satellite_avg.rename(columns={
 #save
 df_satellite_avg.to_csv("satellite_aggregated.csv", index=False)
 
+
+
+# --------------------------------------------------------------------------------------
 
 
 import pandas as pd

@@ -1,0 +1,28 @@
+Company,Supplier,Country,ESG_Risk_Score,Risk_Level,ESG_Issue
+Tesla,Panasonic,Japan,30,Low,Emissions
+Apple,Foxconn,China,60,Medium,Labor Rights
+Nike,VF Corporation,Vietnam,80,Child Labor
+Samsung,TSMC,Taiwan,25,Low,Waste Management
+Amazon,Shein,China,90,High,Worker Exploitation
+Ford,Bosch,Germany,40,Low,Carbon Footprint
+Microsoft,Infosys,India,50,Medium,Data Security
+Adidas,Hugo Boss,Bangladesh,85,High,Labor Rights
+Sony,LG Electronics,South Korea,35,Low,Energy Use
+BMW,Continental,Germany,55,Medium,Raw Material Sourcing
+Intel,ASML,Netherlands,20,Low,Water Consumption
+Google,Tata Consultancy,India,45,Medium,Data Privacy
+Coca-Cola,PepsiCo,USA,70,Medium,Plastic Waste
+Shell,ExxonMobil,USA,95,High,Oil Spills
+Unilever,Nestlé,Switzerland,65,Medium,Deforestation
+Walmart,Carrefour,France,50,Medium,Fair Trade Violations
+Huawei,Ericsson,Sweden,30,Low,Cybersecurity Risks
+General Motors,Magna,Canada,40,Low,Energy Use
+Siemens,Schneider Electric,France,35,Low,Carbon Footprint
+Johnson & Johnson,Medtronic,USA,60,Medium,Medical Waste
+Boeing,Airbus,France,75,High,Emissions
+Pfizer,Moderna,USA,55,Medium,Clinical Trial Ethics
+Dell,HP,USA,50,Medium,E-Waste
+Uber,Lyft,USA,70,Medium,Worker Exploitation
+Facebook,Twitter,USA,65,Medium,Data Security
+Netflix,Disney,USA,40,Low,Content Ethics
+SpaceX,Blue Origin,USA,85,High,Space Debris

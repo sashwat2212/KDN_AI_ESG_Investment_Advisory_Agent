@@ -26,7 +26,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
 def get_text_embedding(text):    
-    return embedder.encode([text])[0]  
+    embedding = embedder.encode([text])[0]  # (384,)
+    twitter_esg_sentiment = np.mean(embedding)
+    return twitter_esg_sentiment
+
 
 
 try:
@@ -102,8 +105,8 @@ class ESGScoreInput(BaseModel):
 def predict_sentiment(input_data: SentimentInput):
     try:
         text_vector = get_text_embedding(input_data.text).reshape(1, -1)
-        reduced_vector = pca.transform(text_vector)
-        prediction = sentiment_model.predict(reduced_vector)[0]
+        #reduced_vector = pca.transform(text_vector)
+        prediction = sentiment_model.predict(text_vector)[0]
         return {"sentiment_score": float(prediction)}
     except Exception as e:
         logging.error(f"Error in /predict/sentiment: {e}")
@@ -171,7 +174,7 @@ def get_metadata():
             "last_updated": "2025-03-17"
         },
         "greenwashing_model": {
-            "name": "RandomForest Greenwashing Detection Model",
+            "name": "Greenwashing Detection Model",
             "version": "1.0",
             "last_updated": "2025-03-17"
         }

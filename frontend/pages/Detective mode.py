@@ -15,14 +15,26 @@ def load_data():
 df = load_data()
 
 #mode section
+# Custom CSS for styling
 st.markdown(
     """
     <style>
         .esg-header {
             font-size: 32px;
             font-weight: bold;
-            color: #00A86B;
+            color: rgb(30, 73, 226);  /* KPMG Blue */
             text-align: center;
+        }
+        [data-testid="stSidebar"] {
+            background: #aceaff;
+            padding: 25px;
+            border-right: 4px solid rgb(0, 192, 174);
+            color: #FFFFFF !important;
+        }
+        [data-testid="stSidebarContent"] {
+            background: #aceaff;
+            color: #FFFFFF !important;
+            font-size: 16px;
         }
         .fraud-alert {
             font-size: 24px;
@@ -32,20 +44,20 @@ st.markdown(
             border-radius: 10px;
         }
         .low-risk {
-            background: linear-gradient(135deg, #007BFF 30%, #00A86B 100%);
+            background: #aceaff;
             padding: 15px;
             border-radius: 10px;
-            color: green;
+            color: black;
             text-align: center;
             font-size: 20px;
             font-weight: bold;
             margin: 10px 0;
         }
         .high-risk {
-            background: linear-gradient(135deg, #007BFF 30%, #00A86B 100%);
+            background: #aceaff;
             padding: 15px;
             border-radius: 10px;
-            color: #721C24;
+            color: black;
             text-align: center;
             font-size: 20px;
             font-weight: bold;
@@ -61,26 +73,25 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
+# Encode the logo
 logo_base64 = get_base64_image("logo.png")
 
-st.markdown(
+# Insert logo at the top of the sidebar
+st.sidebar.markdown(
     f"""
     <style>
-        .logo-container {{
-            
-            top: 1;
-            left: 1;
-            z-index: 9999;
-            padding: 0;
-            margin: 0;
+        .sidebar-logo {{
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-top: -350px;  /* Move logo up */
+            margin-bottom: 20px; /* Add some space below */
         }}
-        .logo-container img {{
-            width: 70px;  /* Adjust the size as needed */
-            padding: 0;
-            margin: 0;
+        .sidebar-logo img {{
+            width: 120px;  /* Adjust logo size */
         }}
     </style>
-    <div class="logo-container">
+    <div class="sidebar-logo">
         <img src="data:image/png;base64,{logo_base64}">
     </div>
     """,

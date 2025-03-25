@@ -9,28 +9,6 @@ API_URL = "http://127.0.0.1:8000"
 
 st.set_page_config(page_title="ESG Investment Dashboard", layout="wide")
 
-
-
-# def get_base64_image(image_path):
-#     with open(image_path, "rb") as img_file:
-#         return base64.b64encode(img_file.read()).decode()
-
-# logo_base64 = get_base64_image("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /logo.png")
-
-# st.markdown(
-#     f"""
-#     <div style="text-align: left;">
-#         <img src="data:image/png;base64,{logo_base64}" style="width: 200px;">
-#     </div>
-#     """,
-#     unsafe_allow_html=True
-# )
-
-
-
-#st.sidebar.image("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /logo.png", use_container_width=True)  
-
-
 st.markdown(
     """
     <style>
@@ -38,39 +16,40 @@ st.markdown(
             font-family: 'Arial', sans-serif;
         }
         [data-testid="stSidebar"] {
-            background: linear-gradient(180deg, #002855, #004d99);
+            background: #aceaff;
             padding: 25px;
-            border-right: 4px solid #00A86B;
-            color: #FFFFFF !important;
+            border-right: 4px solid rgb(0, 192, 174);
+            color: #000000 !important;
         }
         [data-testid="stSidebarContent"] {
-            background: linear-gradient(180deg, #002855, #004d99);
-            color: #FFFFFF !important;
+            background: #aceaff;
+            color: #000000 !important;
             font-size: 16px;
         }
         .stButton > button {
             border-radius: 10px;
-            background: linear-gradient(135deg, #007BFF, #00A86B);
-            color: white;
+            background: rgb(118, 210, 255);
+
+            color: black;
             font-weight: bold;
             padding: 10px 20px;
             transition: 0.3s;
             border: none;
         }
         .stButton > button:hover {
-            background: linear-gradient(135deg, #00A86B, #007BFF);
+            background: rgb(118, 210, 255)
             transform: scale(1.05);
         }
         .stTextArea textarea {
-            background: black;
-            color: white !important;
+            background: #aceaff;
+            color: black !important;
             border-radius: 8px;
         }
         .metric-card {
-            background: linear-gradient(135deg, #007BFF 30%, #00A86B 100%);
+            background: #aceaff;
             padding: 20px;
             border-radius: 12px;
-            color: white;
+            color: black;
             text-align: center;
             font-size: 22px;
             font-weight: bold;
@@ -87,26 +66,34 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
+# Encode the logo
 logo_base64 = get_base64_image("logo.png")
 
-st.markdown(
+# Insert logo at the top of the sidebar
+st.sidebar.markdown(
     f"""
     <style>
-        .logo-container {{
-            
-            top: 1;
-            left: 1;
-            z-index: 9999;
-            padding: 0;
-            margin: 0;
+        .sidebar-logo-container {{
+            background: white; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Space between logo and sidebar content */
         }}
-        .logo-container img {{
-            width: 70px;  /* Adjust the size as needed */
-            padding: 0;
-            margin: 0;
+        .sidebar-logo {{
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-top: -350px;  /* Move logo up */
+            margin-bottom: 20px; /* Add some space below */
+        }}
+        .sidebar-logo img {{
+            width: 120px;  /* Adjust logo size */
         }}
     </style>
-    <div class="logo-container">
+    <div class="sidebar-logo">
         <img src="data:image/png;base64,{logo_base64}">
     </div>
     """,
@@ -114,16 +101,9 @@ st.markdown(
 )
 
 
-st.sidebar.title("🌍 ESG Navigation")
-st.sidebar.page_link("dashboard.py", label="📢 ESG Predictions & Portfolio")
-st.sidebar.page_link("pages/stats.py", label="📈 ESG Statistics & Visualizations")
-st.sidebar.page_link("pages/images.py", label="🖼️ ESG Image Gallery")
-st.sidebar.page_link("pages/detective.py", label="🔍 ESG Detective Model")
-
-
 st.sidebar.header("📜 User Input")
 company_text = st.sidebar.text_area(
-    "Enter Company News for ESG Sentiment Analysis",
+    "",
     "Tesla commits to sustainable energy."
 )
 
@@ -151,29 +131,31 @@ if st.sidebar.button("🔍 Analyze ESG Score & Recommend Investment"):
         except Exception as e:
             st.sidebar.error(f"API Request Failed: {e}")
 
-    st.sidebar.success("✅ Results Updated")
+    st.sidebar.success("Results Updated")
 
 
-st.title("📊 ESG Investment Dashboard")
+st.title("ESG Investment Dashboard")
 
 
 st.markdown(
     """
     <style>
         .metric-card {
-            background: linear-gradient(135deg, #007BFF 30%, #00A86B 100%);
+            background: #aceaff;
             padding: 15px;
-            border-radius: 10px;
-            color: white;
+            border-radius: 12px;
+            color: black;
             text-align: center;
             font-size: 20px;
             font-weight: bold;
             margin: 10px 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 sentiment_score = round(sentiment_score, 5) if isinstance(sentiment_score, (int, float)) else sentiment_score
 st.markdown(f'<div class="metric-card">🌍 ESG Sentiment Score: {sentiment_score}</div>', unsafe_allow_html=True)
@@ -181,7 +163,7 @@ st.markdown(f'<div class="metric-card">🌍 ESG Sentiment Score: {sentiment_scor
 st.markdown("---")
 
 
-st.subheader("🏦 AI-Powered ESG Investment Recommendation")
+st.subheader("AI-Powered ESG Investment Recommendation")
 
 ACTION_MAP = {0: "Buy", 1: "Hold", 2: "Sell"}
 recommended_action_text = ACTION_MAP.get(recommended_action, "Unknown")
@@ -189,7 +171,7 @@ recommended_action_text = ACTION_MAP.get(recommended_action, "Unknown")
 if recommended_action == "Error":
     st.error("❌ Could not fetch investment recommendation.")
 else:
-    st.success(f"✅ **Recommended Investment Action:** {recommended_action_text}")
+    st.success(f"**Recommended Investment Action:** {recommended_action_text}")
     st.info(f"💡 **Q-Values:** {q_values}")
 
 st.markdown("---")
@@ -200,21 +182,23 @@ st.markdown(
     """
     <style>
         .portfolio-card {
-            background: linear-gradient(135deg, #007BFF 30%, #00A86B 100%);
+            background: #aceaff;
             padding: 15px;
-            border-radius: 10px;
-            color: white;
+            border-radius: 12px;
+            color: black;
             text-align: center;
             font-size: 20px;
             font-weight: bold;
             margin: 10px 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-investment_amount = st.number_input("💵 Enter Investment Amount ($):", min_value=100, step=100)
+
+investment_amount = st.number_input("Enter Investment Amount ($):", min_value=100, step=100)
 
 if q_values and isinstance(q_values, list) and all(isinstance(q, (int, float, str)) for q in q_values):
     try:
@@ -266,10 +250,10 @@ if st.button("🚦 Analyze Greenwashing"):
 st.markdown("---")
 
 
-st.subheader("🚨 Greenwashing Alert System")
+st.subheader("Greenwashing Alert System")
 
 if greenwashing_alert == 1:
-    st.error("🔴 **Greenwashing Found!** ⚠️")
+    st.error("🔴 **Greenwashing Found!**")
 elif greenwashing_alert == 0:
     st.success("✅ **No Greenwashing Detected.**")
 else:
@@ -277,9 +261,9 @@ else:
 
 st.markdown("---")
 
+# 🔮 **ESG Score Prediction**
+st.subheader("ESG Score Prediction Model")
 
-st.subheader("🔮 ESG Score Prediction Model")
-esg_score = round(esg_score, 5) if isinstance(esg_score, (int, float)) else esg_score
 if esg_score != "N/A":
     st.metric("📊 Predicted ESG Score", esg_score)
 else:

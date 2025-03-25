@@ -28,7 +28,7 @@ df_cleaned.head()
 
 df_cleaned.to_csv("/Users/kdn_aisashwat/Desktop/esg-investment-advisor/esg_data/cleaned_esg_data.csv", index=False)
 
-
+# --------------------------------------------------------------------------------------
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -94,6 +94,9 @@ plt.close()
 
 print("EDA visualizations saved in 'visualizations/' directory.")
 
+
+
+# --------------------------------------------------------------------------------------
 
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
