@@ -105,7 +105,7 @@ st.sidebar.markdown(
 
 
 # Load dataset
-df = pd.read_csv("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /supply_chain_esg.csv")
+df = pd.read_csv("//Users/kdn_aisashwat/Desktop/esg-investment-advisor /Datasets/supply_chain_esg.csv")
 
 def get_color(risk_level):
     return {

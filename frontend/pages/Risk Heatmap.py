@@ -123,7 +123,7 @@ st.sidebar.markdown(
 )
 
 # Load dataset
-df = pd.read_csv("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /corporate_financing_esg_dataset.csv")
+df = pd.read_csv("/Users/kdn_aisashwat/Desktop/esg-investment-advisor /Datasets/corporate_financing_esg_dataset.csv")
 
 # Hardcoded Latitude & Longitude for specific countries
 country_coords = {
