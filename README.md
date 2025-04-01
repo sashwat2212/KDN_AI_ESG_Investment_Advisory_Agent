@@ -109,8 +109,7 @@ ESG-INVESTMENT-ADVISOR/
 - **Processing**: RL agent optimizes investment strategies.
 - **Output**: AI-powered investment recommendations with confidence scores.
 
-### **Screenshots & Logs**
-(Screenshots of dashboards, model results, API responses, and heatmaps will be included here.)
+
 
 ## Edge Case Testing & Data Scenarios
 1. **Companies with conflicting ESG claims**: Analyzed firms that report high ESG scores but have negative sentiment in news/social media.
