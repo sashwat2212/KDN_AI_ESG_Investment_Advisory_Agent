@@ -132,7 +132,7 @@ st.sidebar.markdown(
 apply_custom_styles()
 
 #header
-st.markdown('<p class="header-text">🖼️ ESG Image Gallery</p>', unsafe_allow_html=True)
+st.title('🖼️ ESG Image Gallery')
 st.markdown('<p class="info-text">Explore ESG-related insights through visually engaging data-driven images.</p>', unsafe_allow_html=True)
 
 st.markdown("-------")

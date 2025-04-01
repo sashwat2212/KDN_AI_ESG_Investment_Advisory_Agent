@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
 def get_text_embedding(text):    
-    embedding = embedder.encode([text])[0]  # (384,)
+    embedding = embedder.encode([text])[0] 
     twitter_esg_sentiment = np.mean(embedding)
     return twitter_esg_sentiment
 

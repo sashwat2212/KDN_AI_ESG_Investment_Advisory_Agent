@@ -147,14 +147,14 @@ class ESGAgent:
 #     def get_action(self, state):
 #         if random.random() < self.epsilon:
 #             action = random.choice(range(self.action_dim))
-#             print(f"🎲 Random Action: {action}")
+#             print(f"Random Action: {action}")
 #             return action
 #         else:
 #             state_tensor = torch.FloatTensor(state).unsqueeze(0)  # (batch_size=1, state_dim)
 #             q_values, self.hidden = self.model(state_tensor, self.hidden)  # Pass hidden state
             
 #             action = torch.argmax(q_values).item()
-#             print(f"🤖 Model Action: {action}, Q-values: {q_values.tolist()}")
+#             print(f"Model Action: {action}, Q-values: {q_values.tolist()}")
 #             return action
         
 #     @staticmethod

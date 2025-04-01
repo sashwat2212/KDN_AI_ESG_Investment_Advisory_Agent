@@ -98,7 +98,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown('<div class="esg-header">🔍 ESG Detective Mode - Fraud Likelihood Meter</div>', unsafe_allow_html=True)
+st.title('🔍 ESG Detective Mode - Fraud Likelihood Meter')
 
 #dropdown 
 selected_company = st.selectbox("Select a Company", ["Select..."] + list(df["Company"]))
