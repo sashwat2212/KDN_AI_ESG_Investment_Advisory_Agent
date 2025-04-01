@@ -74,6 +74,7 @@ ESG-INVESTMENT-ADVISOR/
 ```
 
 ## Execution Results, Screenshot Logs, Output Files
+### Sample Outputs:
 <img width="1512" alt="Image" src="https://github.com/user-attachments/assets/70f9a78e-c7c9-41b8-9c5c-81d9d24bce08" />
 <img width="1510" alt="Image" src="https://github.com/user-attachments/assets/1a305b60-d6ac-4e84-9d81-63564f1d238a" />
 <img width="1511" alt="Image" src="https://github.com/user-attachments/assets/58baf0ee-b6d4-4a0a-b2f6-4331ca1b7ea4" />
@@ -91,7 +92,8 @@ ESG-INVESTMENT-ADVISOR/
 <img width="1512" alt="Image" src="https://github.com/user-attachments/assets/b64fdd04-79e1-4ed6-ac3c-222d16f74699" />
 <img width="1512" alt="Image" src="https://github.com/user-attachments/assets/ac449d38-6a7a-49a4-8390-33b39155cf8a" />
 <img width="1511" alt="Image" src="https://github.com/user-attachments/assets/ad3eb622-9493-4023-b6da-5f1a89a8247a" />
-### Sample Outputs:
+
+
 #### **Sentiment Analysis**
 - **Input**: News headlines & social media posts related to a company.
 - **Processing**: NLP-based text classification for ESG sentiment.
