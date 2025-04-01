@@ -74,6 +74,23 @@ ESG-INVESTMENT-ADVISOR/
 ```
 
 ## Execution Results, Screenshot Logs, Output Files
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/70f9a78e-c7c9-41b8-9c5c-81d9d24bce08" />
+<img width="1510" alt="Image" src="https://github.com/user-attachments/assets/1a305b60-d6ac-4e84-9d81-63564f1d238a" />
+<img width="1511" alt="Image" src="https://github.com/user-attachments/assets/58baf0ee-b6d4-4a0a-b2f6-4331ca1b7ea4" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/ca5dd3d7-3ef7-4396-8e65-11d83bd9cd1f" />
+<img width="1511" alt="Image" src="https://github.com/user-attachments/assets/46e190a8-abe4-4718-b3a7-f4e3cedaf753" />
+<img width="1510" alt="Image" src="https://github.com/user-attachments/assets/2fce4a90-c0f0-402c-8d60-432fac239076" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/436195ba-4a88-45e3-aba7-02b21ced4e3b" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/7c8d1471-3c04-497a-acef-29740b8485a9" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/e55f189b-32cc-4f25-8437-b880031f76aa" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/cdde492f-a6d7-472e-b990-06afacacaef3" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/e8ea9021-7e6e-4d28-aa32-5974b539162c" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/39111f9f-3c7e-4e7a-a7ee-e01156ac0dad" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/71abb407-079a-4cc0-b766-13df4f3e8bf1" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/098f6077-8271-439f-bfc3-c390ecfb7003" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/b64fdd04-79e1-4ed6-ac3c-222d16f74699" />
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/ac449d38-6a7a-49a4-8390-33b39155cf8a" />
+<img width="1511" alt="Image" src="https://github.com/user-attachments/assets/ad3eb622-9493-4023-b6da-5f1a89a8247a" />
 ### Sample Outputs:
 #### **Sentiment Analysis**
 - **Input**: News headlines & social media posts related to a company.
